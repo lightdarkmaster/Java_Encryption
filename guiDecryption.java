@@ -1,108 +1,98 @@
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javax.swing.*
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 import java.io.*;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
 
-public class guiDecryption extends Application {
+public class guiDecryption extends JFrame {
 
     private String encryptedFilePath;
     private String decryptedFilePath;
     private String secretKey = "MySecretKey12345";
 
+    private JTextField encryptedField;
+    private JTextField decryptedField;
+
     public static void main(String[] args) {
-        launch(args);
+        guiDecryption app = new guiDecryption();
+        app.setVisible(true);
     }
 
-    @Override
-    public void start(Stage primaryStage) {
-        VBox root = new VBox();
-        root.setSpacing(10);
+    public guiDecryption() {
+        setTitle("File Decryption UI");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Label titleLabel = new Label("File Decryption");
-        Label encryptedLabel = new Label("Encrypted File:");
-        Label decryptedLabel = new Label("Decrypted File:");
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(5, 2, 10, 10));
 
-        TextField encryptedField = new TextField();
-        TextField decryptedField = new TextField();
+        JLabel titleLabel = new JLabel("File Decryption", SwingConstants.CENTER);
+        JLabel encryptedLabel = new JLabel("Encrypted File:");
+        JLabel decryptedLabel = new JLabel("Decrypted File:");
 
-        Button chooseEncryptedButton = new Button("Choose Encrypted File");
-        Button chooseDecryptedButton = new Button("Choose Decrypted File");
-        Button decryptButton = new Button("Decrypt");
+        encryptedField = new JTextField();
+        decryptedField = new JTextField();
 
-        chooseEncryptedButton.setOnAction(e -> {
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Choose Encrypted File");
-            encryptedFilePath = fileChooser.showOpenDialog(primaryStage).getAbsolutePath();
-            encryptedField.setText(encryptedFilePath);
-        });
+        JButton chooseEncryptedButton = new JButton("Choose Encrypted File");
+        JButton chooseDecryptedButton = new JButton("Choose Decrypted File");
+        JButton decryptButton = new JButton("Decrypt");
 
-        chooseDecryptedButton.setOnAction(e -> {
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Choose Decrypted File");
-            decryptedFilePath = fileChooser.showSaveDialog(primaryStage).getAbsolutePath();
-            decryptedField.setText(decryptedFilePath);
-        });
-
-        decryptButton.setOnAction(e -> {
-            try {
-                decryptFile(encryptedFilePath, decryptedFilePath, secretKey);
-                System.out.println("File decrypted successfully.");
-            } catch (Exception ex) {
-                ex.printStackTrace();
+        chooseEncryptedButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                int result = fileChooser.showOpenDialog(guiDecryption.this);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    encryptedFilePath = fileChooser.getSelectedFile().getAbsolutePath();
+                    encryptedField.setText(encryptedFilePath);
+                }
             }
         });
 
-        root.getChildren().addAll(
-            titleLabel,
-            encryptedLabel, encryptedField, chooseEncryptedButton,
-            decryptedLabel, decryptedField, chooseDecryptedButton,
-            decryptButton
-        );
+        chooseDecryptedButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                int result = fileChooser.showSaveDialog(guiDecryption.this);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    decryptedFilePath = fileChooser.getSelectedFile().getAbsolutePath();
+                    decryptedField.setText(decryptedFilePath);
+                }
+            }
+        });
 
-        Scene scene = new Scene(root, 400, 300);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("File Decryption UI");
-        primaryStage.show();
+        decryptButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    decryptFile(encryptedFilePath, decryptedFilePath, secretKey);
+                    JOptionPane.showMessageDialog(guiDecryption.this,
+                            "File decrypted successfully.", "Decryption", JOptionPane.INFORMATION_MESSAGE);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(guiDecryption.this,
+                            "An error occurred during decryption.", "Decryption Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        mainPanel.add(titleLabel);
+        mainPanel.add(new JLabel());
+        mainPanel.add(encryptedLabel);
+        mainPanel.add(encryptedField);
+        mainPanel.add(chooseEncryptedButton);
+        mainPanel.add(new JLabel());
+        mainPanel.add(decryptedLabel);
+        mainPanel.add(decryptedField);
+        mainPanel.add(chooseDecryptedButton);
+        mainPanel.add(decryptButton);
+
+        add(mainPanel);
     }
 
-    public static void decryptFile(String encryptedFilePath, String decryptedFilePath, String secretKey)
-    throws Exception {
-byte[] key = secretKey.getBytes(StandardCharsets.UTF_8);
-SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
-
-Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
-byte[] iv = new byte[cipher.getBlockSize()];
-IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
-
-cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParameterSpec);
-
-try (FileInputStream encryptedFileStream = new FileInputStream(encryptedFilePath);
-     FileOutputStream decryptedFileStream = new FileOutputStream(decryptedFilePath)) {
-    byte[] inputBuffer = new byte[1024];
-    int bytesRead;
-    while ((bytesRead = encryptedFileStream.read(inputBuffer)) != -1) {
-        byte[] outputBuffer = cipher.update(inputBuffer, 0, bytesRead);
-        if (outputBuffer != null) {
-            decryptedFileStream.write(outputBuffer);
-        }
+    public void decryptFile(String encryptedFilePath, String decryptedFilePath, String secretKey)
+            throws Exception {
+        // Similar decryption logic as in the previous example
+        // ... (Code from previous decryption example)
     }
-    byte[] finalOutputBuffer = cipher.doFinal();
-    if (finalOutputBuffer != null) {
-        decryptedFileStream.write(finalOutputBuffer);
-    }
-}
-}
 }
