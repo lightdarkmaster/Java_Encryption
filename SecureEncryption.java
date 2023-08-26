@@ -17,6 +17,7 @@ public class SecureEncryption {
         System.out.println("Original: " + plaintext);
         System.out.println("Encrypted: " + bytesToHex(encryptedBytes));
         System.out.println("Decrypted: " + decryptedText);
+        System.out.println("Encryption File Ends Here....");
     }
 
     public static SecretKey generateAESKey() throws NoSuchAlgorithmException {
