@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class RunCmdCommand {
     public static void main(String[] args) {
-        String cmdCommand = "dir"; // Replace with the CMD command you want to run
+        String cmdCommand = "dir/s"; // Replace with the CMD command you want to run
 
         runCmdCommand(cmdCommand);
     }
