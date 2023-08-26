@@ -13,6 +13,7 @@ public class SecureEncryption {
         byte[] encryptedBytes = encryptAES(plaintext, secretKey);
         String decryptedText = decryptAES(encryptedBytes, secretKey);
         
+        System.out.println("Encryption File Starts Here....");
         System.out.println("Original: " + plaintext);
         System.out.println("Encrypted: " + bytesToHex(encryptedBytes));
         System.out.println("Decrypted: " + decryptedText);
