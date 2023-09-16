@@ -1,6 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package com.chanbarbosa.activityno1;
 
 import java.awt.Color;
 
+/**
+ *
+ * @author ASUS
+ */
 public class CipherForm extends javax.swing.JFrame {
 
 	/**
@@ -39,6 +48,15 @@ public class CipherForm extends javax.swing.JFrame {
                 p3 = new javax.swing.JPanel();
                 jLabel3 = new javax.swing.JLabel();
                 jLabel8 = new javax.swing.JLabel();
+                jLabel10 = new javax.swing.JLabel();
+                jLabel11 = new javax.swing.JLabel();
+                jLabel12 = new javax.swing.JLabel();
+                jPanel5 = new javax.swing.JPanel();
+                jPanel6 = new javax.swing.JPanel();
+                jPanel7 = new javax.swing.JPanel();
+                jPanel8 = new javax.swing.JPanel();
+                jLabel13 = new javax.swing.JLabel();
+                jPanel9 = new javax.swing.JPanel();
                 jTabbedPane1 = new javax.swing.JTabbedPane();
                 monoPanel = new javax.swing.JPanel();
                 jPanel10 = new javax.swing.JPanel();
@@ -55,6 +73,8 @@ public class CipherForm extends javax.swing.JFrame {
                 jLabel5 = new javax.swing.JLabel();
                 jLabel6 = new javax.swing.JLabel();
                 jLabel7 = new javax.swing.JLabel();
+                jLabel14 = new javax.swing.JLabel();
+                jLabel25 = new javax.swing.JLabel();
                 polyPanel = new javax.swing.JPanel();
                 jPanel11 = new javax.swing.JPanel();
                 jScrollPane8 = new javax.swing.JScrollPane();
@@ -70,6 +90,8 @@ public class CipherForm extends javax.swing.JFrame {
                 jLabel17 = new javax.swing.JLabel();
                 jLabel18 = new javax.swing.JLabel();
                 jLabel19 = new javax.swing.JLabel();
+                jLabel15 = new javax.swing.JLabel();
+                jLabel26 = new javax.swing.JLabel();
                 vigenerPanel = new javax.swing.JPanel();
                 jPanel12 = new javax.swing.JPanel();
                 jScrollPane14 = new javax.swing.JScrollPane();
@@ -85,6 +107,8 @@ public class CipherForm extends javax.swing.JFrame {
                 jLabel21 = new javax.swing.JLabel();
                 jLabel22 = new javax.swing.JLabel();
                 jLabel23 = new javax.swing.JLabel();
+                jLabel24 = new javax.swing.JLabel();
+                jLabel27 = new javax.swing.JLabel();
 
                 jTable1.setModel(new javax.swing.table.DefaultTableModel(
                         new Object [][] {
@@ -100,6 +124,7 @@ public class CipherForm extends javax.swing.JFrame {
                 jScrollPane3.setViewportView(jTable1);
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setResizable(false);
 
                 jPanel4.setBackground(new java.awt.Color(204, 255, 255));
                 jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -119,7 +144,7 @@ public class CipherForm extends javax.swing.JFrame {
                 jPanel2.setBackground(new java.awt.Color(153, 255, 255));
                 jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                p1.setBackground(new java.awt.Color(153, 255, 255));
+                p1.setBackground(new java.awt.Color(255, 153, 102));
                 p1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
                 p1.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -159,7 +184,7 @@ public class CipherForm extends javax.swing.JFrame {
                                 .addGap(19, 19, 19))
                 );
 
-                jPanel2.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 190, 50));
+                jPanel2.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 190, 50));
 
                 p2.setBackground(new java.awt.Color(153, 255, 255));
                 p2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -201,7 +226,7 @@ public class CipherForm extends javax.swing.JFrame {
                                 .addContainerGap(15, Short.MAX_VALUE))
                 );
 
-                jPanel2.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, 50));
+                jPanel2.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 190, 50));
 
                 p3.setBackground(new java.awt.Color(153, 255, 255));
                 p3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -232,9 +257,8 @@ public class CipherForm extends javax.swing.JFrame {
                 p3Layout.setHorizontalGroup(
                         p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p3Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42))
+                                .addGap(0, 64, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                 );
                 p3Layout.setVerticalGroup(
                         p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,12 +268,101 @@ public class CipherForm extends javax.swing.JFrame {
                                 .addContainerGap(16, Short.MAX_VALUE))
                 );
 
-                jPanel2.add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 190, 50));
+                jPanel2.add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 190, 50));
 
-                jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 2, 12)); // NOI18N
-                jLabel8.setForeground(new java.awt.Color(255, 102, 102));
-                jLabel8.setText("Created by: Christian Barbosa");
-                jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
+                jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 3, 12)); // NOI18N
+                jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel8.setText("BSIT-AI41");
+                jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
+
+                jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 3, 12)); // NOI18N
+                jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel10.setText("Created by: Christian Barbosa");
+                jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, -1));
+
+                jLabel11.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\CIPHER.png")); // NOI18N
+                jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, 40));
+
+                jLabel12.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\hecker.png")); // NOI18N
+                jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 140));
+
+                jPanel5.setBackground(new java.awt.Color(0, 255, 204));
+
+                javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+                jPanel5.setLayout(jPanel5Layout);
+                jPanel5Layout.setHorizontalGroup(
+                        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 190, Short.MAX_VALUE)
+                );
+                jPanel5Layout.setVerticalGroup(
+                        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 10, Short.MAX_VALUE)
+                );
+
+                jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 190, -1));
+
+                jPanel6.setBackground(new java.awt.Color(0, 255, 204));
+
+                javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+                jPanel6.setLayout(jPanel6Layout);
+                jPanel6Layout.setHorizontalGroup(
+                        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 10, Short.MAX_VALUE)
+                );
+                jPanel6Layout.setVerticalGroup(
+                        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 210, Short.MAX_VALUE)
+                );
+
+                jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 10, 210));
+
+                jPanel7.setBackground(new java.awt.Color(0, 255, 204));
+
+                javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+                jPanel7.setLayout(jPanel7Layout);
+                jPanel7Layout.setHorizontalGroup(
+                        jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 10, Short.MAX_VALUE)
+                );
+                jPanel7Layout.setVerticalGroup(
+                        jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 210, Short.MAX_VALUE)
+                );
+
+                jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+                jPanel8.setBackground(new java.awt.Color(0, 255, 204));
+
+                javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+                jPanel8.setLayout(jPanel8Layout);
+                jPanel8Layout.setHorizontalGroup(
+                        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 190, Short.MAX_VALUE)
+                );
+                jPanel8Layout.setVerticalGroup(
+                        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 10, Short.MAX_VALUE)
+                );
+
+                jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, -1));
+
+                jLabel13.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\lock (1).png")); // NOI18N
+                jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 120, -1));
+
+                jPanel9.setBackground(new java.awt.Color(0, 255, 204));
+
+                javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+                jPanel9.setLayout(jPanel9Layout);
+                jPanel9Layout.setHorizontalGroup(
+                        jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 190, Short.MAX_VALUE)
+                );
+                jPanel9Layout.setVerticalGroup(
+                        jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 10, Short.MAX_VALUE)
+                );
+
+                jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 190, -1));
 
                 jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 560));
 
@@ -301,6 +414,7 @@ public class CipherForm extends javax.swing.JFrame {
                 });
                 jPanel10.add(clear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 125, 39));
 
+                output1.setEditable(false);
                 output1.setColumns(20);
                 output1.setRows(5);
                 jScrollPane4.setViewportView(output1);
@@ -309,23 +423,30 @@ public class CipherForm extends javax.swing.JFrame {
 
                 jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel4.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel4.setText("Keys");
-                jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 56, 37));
+                jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\keys.png")); // NOI18N
+                jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 220, 70, 37));
 
                 jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel5.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel5.setText("Output");
-                jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, 37));
+                jLabel5.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\output.png")); // NOI18N
+                jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 100, 37));
 
                 jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel6.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel6.setText("Plaintext");
-                jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 97, 37));
+                jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\plaintext.png")); // NOI18N
+                jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, 37));
 
                 jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel7.setForeground(new java.awt.Color(0, 0, 153));
-                jLabel7.setText("Mono-Alphabetic Cipher");
-                jPanel10.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 280, -1));
+                jLabel7.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\Mono.png")); // NOI18N
+                jPanel10.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 450, 40));
+
+                jLabel14.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\corner (1).png")); // NOI18N
+                jPanel10.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, -1, -1));
+
+                jLabel25.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\OverSizeCops\\corner2.png")); // NOI18N
+                jLabel25.setText("jLabel25");
+                jPanel10.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 260, 250));
 
                 javax.swing.GroupLayout monoPanelLayout = new javax.swing.GroupLayout(monoPanel);
                 monoPanel.setLayout(monoPanelLayout);
@@ -386,6 +507,7 @@ public class CipherForm extends javax.swing.JFrame {
                 });
                 jPanel11.add(clear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 125, 39));
 
+                output2.setEditable(false);
                 output2.setColumns(20);
                 output2.setRows(5);
                 jScrollPane13.setViewportView(output2);
@@ -394,30 +516,37 @@ public class CipherForm extends javax.swing.JFrame {
 
                 jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel16.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel16.setText("Keys");
-                jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 56, 37));
+                jLabel16.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\keys.png")); // NOI18N
+                jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 80, 37));
 
                 jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel17.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel17.setText("Output");
-                jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, 37));
+                jLabel17.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\output.png")); // NOI18N
+                jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 110, 37));
 
                 jLabel18.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel18.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel18.setText("Plaintext");
-                jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 97, 37));
+                jLabel18.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\plaintext.png")); // NOI18N
+                jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 140, 37));
 
                 jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel19.setForeground(new java.awt.Color(0, 0, 153));
-                jLabel19.setText("Poly-Alphabetic Cipher");
-                jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 280, -1));
+                jLabel19.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\poly.png")); // NOI18N
+                jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 450, 40));
+
+                jLabel15.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\corner (1).png")); // NOI18N
+                jPanel11.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, -1, -1));
+
+                jLabel26.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\OverSizeCops\\corner2.png")); // NOI18N
+                jLabel26.setText("jLabel25");
+                jPanel11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 260, 250));
 
                 javax.swing.GroupLayout polyPanelLayout = new javax.swing.GroupLayout(polyPanel);
                 polyPanel.setLayout(polyPanelLayout);
                 polyPanelLayout.setHorizontalGroup(
                         polyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(polyPanelLayout.createSequentialGroup()
-                                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 773, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                 );
                 polyPanelLayout.setVerticalGroup(
@@ -477,6 +606,7 @@ public class CipherForm extends javax.swing.JFrame {
                 });
                 jPanel12.add(clear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 125, 39));
 
+                output3.setEditable(false);
                 output3.setColumns(20);
                 output3.setRows(5);
                 jScrollPane16.setViewportView(output3);
@@ -485,23 +615,30 @@ public class CipherForm extends javax.swing.JFrame {
 
                 jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel20.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel20.setText("Keys");
-                jPanel12.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 56, 37));
+                jLabel20.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\keys.png")); // NOI18N
+                jPanel12.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 70, 37));
 
                 jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel21.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel21.setText("Output");
-                jPanel12.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, 37));
+                jLabel21.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\output.png")); // NOI18N
+                jPanel12.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 110, 37));
 
                 jLabel22.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel22.setForeground(new java.awt.Color(0, 0, 255));
-                jLabel22.setText("Plaintext");
-                jPanel12.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 97, 37));
+                jLabel22.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\plaintext.png")); // NOI18N
+                jPanel12.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 140, 37));
 
                 jLabel23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel23.setForeground(new java.awt.Color(0, 0, 153));
-                jLabel23.setText("Vigener Cipher");
-                jPanel12.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 280, -1));
+                jLabel23.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\Vigener.png")); // NOI18N
+                jPanel12.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 280, 40));
+
+                jLabel24.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\corner (1).png")); // NOI18N
+                jPanel12.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, -1, -1));
+
+                jLabel27.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\OverSizeCops\\corner2.png")); // NOI18N
+                jLabel27.setText("jLabel25");
+                jPanel12.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 260, 250));
 
                 javax.swing.GroupLayout vigenerPanelLayout = new javax.swing.GroupLayout(vigenerPanel);
                 vigenerPanel.setLayout(vigenerPanelLayout);
@@ -572,7 +709,7 @@ public class CipherForm extends javax.swing.JFrame {
 		   output3.setText(encryptedText3);  
 		   
 		   String decryptedText3 = decrypt(encryptedText3, keyword);
-		    output3.setText(decryptedText3);  
+		    output3.setText(plaintext);  
         }                                        
 
         private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
@@ -727,6 +864,12 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JButton encrypt2;
         private javax.swing.JButton encrypt3;
         private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel10;
+        private javax.swing.JLabel jLabel11;
+        private javax.swing.JLabel jLabel12;
+        private javax.swing.JLabel jLabel13;
+        private javax.swing.JLabel jLabel14;
+        private javax.swing.JLabel jLabel15;
         private javax.swing.JLabel jLabel16;
         private javax.swing.JLabel jLabel17;
         private javax.swing.JLabel jLabel18;
@@ -736,6 +879,10 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JLabel jLabel21;
         private javax.swing.JLabel jLabel22;
         private javax.swing.JLabel jLabel23;
+        private javax.swing.JLabel jLabel24;
+        private javax.swing.JLabel jLabel25;
+        private javax.swing.JLabel jLabel26;
+        private javax.swing.JLabel jLabel27;
         private javax.swing.JLabel jLabel3;
         private javax.swing.JLabel jLabel4;
         private javax.swing.JLabel jLabel5;
@@ -749,6 +896,11 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JPanel jPanel12;
         private javax.swing.JPanel jPanel2;
         private javax.swing.JPanel jPanel4;
+        private javax.swing.JPanel jPanel5;
+        private javax.swing.JPanel jPanel6;
+        private javax.swing.JPanel jPanel7;
+        private javax.swing.JPanel jPanel8;
+        private javax.swing.JPanel jPanel9;
         private javax.swing.JScrollPane jScrollPane1;
         private javax.swing.JScrollPane jScrollPane12;
         private javax.swing.JScrollPane jScrollPane13;
