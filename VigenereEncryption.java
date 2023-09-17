@@ -1,3 +1,5 @@
+package Java_Encryption;
+
 public class VigenereEncryption {
     public static void main(String[] args) {
         String plaintext = "HELLO";

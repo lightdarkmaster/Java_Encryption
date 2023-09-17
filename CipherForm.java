@@ -16,7 +16,74 @@ public class CipherForm extends javax.swing.JFrame {
 	 * Creates new form CipherForm
 	 */
 	
-	Color defaultcolor, clickedcolor, white, clickedcolor1, clickedcolor2;
+	static String generateKey(String str, String key)
+{
+	int x = str.length();
+
+	for (int i = 0; ; i++)
+	{
+		if (x == i)
+			i = 0;
+		if (key.length() == str.length())
+			break;
+		key+=(key.charAt(i));
+	}
+	return key;
+}
+	
+	static String cipherText(String str, String key)
+{
+	String cipher_text="";
+
+	for (int i = 0; i < str.length(); i++)
+	{
+		// converting in range 0-25
+		int x = (str.charAt(i) + key.charAt(i)) %26;
+
+		// convert into alphabets(ASCII)
+		x += 'A';
+
+		cipher_text+=(char)(x);
+	}
+	return cipher_text;
+}
+	// This function decrypts the encrypted text
+// and returns the original text
+static String originalText(String cipher_text, String key)
+{
+	String orig_text="";
+
+	for (int i = 0 ; i < cipher_text.length() &&
+							i < key.length(); i++)
+	{
+		// converting in range 0-25
+		int x = (cipher_text.charAt(i) -
+					key.charAt(i) + 26) %26;
+
+		// convert into alphabets(ASCII)
+		x += 'A';
+		orig_text+=(char)(x);
+	}
+	return orig_text;
+}
+
+// This function will convert the lower case character to Upper case
+static String LowerToUpper(String s)
+{
+	StringBuffer str =new StringBuffer(s);
+	for(int i = 0; i < s.length(); i++)
+	{
+		if(Character.isLowerCase(s.charAt(i)))
+		{
+			str.setCharAt(i, Character.toUpperCase(s.charAt(i)));
+		}
+	}
+	s = str.toString();
+	return s;
+}
+	private static final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+	Color defaultcolor, clickedcolor, white, clickedcolor1, clickedcolor2, black;
 	public CipherForm() {
 		initComponents();
 		defaultcolor = new Color(153, 255, 255);
@@ -24,6 +91,9 @@ public class CipherForm extends javax.swing.JFrame {
 		clickedcolor1 = new Color(153,255,153);
 		clickedcolor2 = new Color(153,204,255);
 		white = new Color(255, 255, 255);
+		black = new Color(0,0,0);
+		
+		
 	}
 
 	/**
@@ -38,15 +108,15 @@ public class CipherForm extends javax.swing.JFrame {
                 jScrollPane3 = new javax.swing.JScrollPane();
                 jTable1 = new javax.swing.JTable();
                 jPanel4 = new javax.swing.JPanel();
-                jPanel1 = new javax.swing.JPanel();
+                Header = new javax.swing.JPanel();
                 jLabel9 = new javax.swing.JLabel();
-                jPanel2 = new javax.swing.JPanel();
+                menu = new javax.swing.JPanel();
                 p1 = new javax.swing.JPanel();
-                jLabel1 = new javax.swing.JLabel();
+                MonoLabel = new javax.swing.JLabel();
                 p2 = new javax.swing.JPanel();
-                jLabel2 = new javax.swing.JLabel();
+                PolyLabel = new javax.swing.JLabel();
                 p3 = new javax.swing.JPanel();
-                jLabel3 = new javax.swing.JLabel();
+                VigeLabel = new javax.swing.JLabel();
                 jLabel8 = new javax.swing.JLabel();
                 jLabel10 = new javax.swing.JLabel();
                 jLabel11 = new javax.swing.JLabel();
@@ -55,9 +125,23 @@ public class CipherForm extends javax.swing.JFrame {
                 jPanel6 = new javax.swing.JPanel();
                 jPanel7 = new javax.swing.JPanel();
                 jPanel8 = new javax.swing.JPanel();
-                jLabel13 = new javax.swing.JLabel();
+                lock = new javax.swing.JLabel();
                 jPanel9 = new javax.swing.JPanel();
-                jTabbedPane1 = new javax.swing.JTabbedPane();
+                tabs = new javax.swing.JTabbedPane();
+                intro = new javax.swing.JPanel();
+                jPanel2 = new javax.swing.JPanel();
+                jPanel3 = new javax.swing.JPanel();
+                jPanel13 = new javax.swing.JPanel();
+                jLabel29 = new javax.swing.JLabel();
+                jLabel28 = new javax.swing.JLabel();
+                jLabel30 = new javax.swing.JLabel();
+                jLabel31 = new javax.swing.JLabel();
+                jLabel32 = new javax.swing.JLabel();
+                jLabel33 = new javax.swing.JLabel();
+                jLabel34 = new javax.swing.JLabel();
+                jButton1 = new javax.swing.JButton();
+                jLabel35 = new javax.swing.JLabel();
+                jLabel36 = new javax.swing.JLabel();
                 monoPanel = new javax.swing.JPanel();
                 jPanel10 = new javax.swing.JPanel();
                 jScrollPane1 = new javax.swing.JScrollPane();
@@ -109,6 +193,11 @@ public class CipherForm extends javax.swing.JFrame {
                 jLabel23 = new javax.swing.JLabel();
                 jLabel24 = new javax.swing.JLabel();
                 jLabel27 = new javax.swing.JLabel();
+                jPanel1 = new javax.swing.JPanel();
+                jPanel14 = new javax.swing.JPanel();
+                jLabel1 = new javax.swing.JLabel();
+                jPanel15 = new javax.swing.JPanel();
+                jPanel16 = new javax.swing.JPanel();
 
                 jTable1.setModel(new javax.swing.table.DefaultTableModel(
                         new Object [][] {
@@ -129,22 +218,22 @@ public class CipherForm extends javax.swing.JFrame {
                 jPanel4.setBackground(new java.awt.Color(204, 255, 255));
                 jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-                jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                Header.setBackground(new java.awt.Color(255, 255, 255));
+                Header.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
                 jLabel9.setBackground(new java.awt.Color(153, 255, 255));
                 jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
                 jLabel9.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel9.setText("Activity 1. Encryption");
-                jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 270, 30));
+                Header.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 270, 30));
 
-                jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 60));
+                jPanel4.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 60));
 
-                jPanel2.setBackground(new java.awt.Color(153, 255, 255));
-                jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                menu.setBackground(new java.awt.Color(153, 255, 255));
+                menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                p1.setBackground(new java.awt.Color(255, 153, 102));
+                p1.setBackground(new java.awt.Color(153, 255, 255));
                 p1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
                 p1.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -155,15 +244,15 @@ public class CipherForm extends javax.swing.JFrame {
                         }
                 });
 
-                jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-                jLabel1.setText("Mono-Alphabetic Cipher");
-                jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+                MonoLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                MonoLabel.setForeground(new java.awt.Color(0, 0, 0));
+                MonoLabel.setText("Mono-Alphabetic Cipher");
+                MonoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                jLabel1MouseClicked(evt);
+                                MonoLabelMouseClicked(evt);
                         }
                         public void mousePressed(java.awt.event.MouseEvent evt) {
-                                jLabel1MousePressed(evt);
+                                MonoLabelMousePressed(evt);
                         }
                 });
 
@@ -173,18 +262,18 @@ public class CipherForm extends javax.swing.JFrame {
                         p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(p1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(MonoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(34, 34, 34))
                 );
                 p1Layout.setVerticalGroup(
                         p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p1Layout.createSequentialGroup()
                                 .addContainerGap(12, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
+                                .addComponent(MonoLabel)
                                 .addGap(19, 19, 19))
                 );
 
-                jPanel2.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 190, 50));
+                menu.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 190, 50));
 
                 p2.setBackground(new java.awt.Color(153, 255, 255));
                 p2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -197,15 +286,15 @@ public class CipherForm extends javax.swing.JFrame {
                         }
                 });
 
-                jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-                jLabel2.setText("Poly-Alphabetic Cipher");
-                jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+                PolyLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                PolyLabel.setForeground(new java.awt.Color(0, 0, 0));
+                PolyLabel.setText("Poly-Alphabetic Cipher");
+                PolyLabel.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                jLabel2MouseClicked(evt);
+                                PolyLabelMouseClicked(evt);
                         }
                         public void mousePressed(java.awt.event.MouseEvent evt) {
-                                jLabel2MousePressed(evt);
+                                PolyLabelMousePressed(evt);
                         }
                 });
 
@@ -215,18 +304,18 @@ public class CipherForm extends javax.swing.JFrame {
                         p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(p2Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(PolyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(34, 34, 34))
                 );
                 p2Layout.setVerticalGroup(
                         p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(p2Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(jLabel2)
+                                .addComponent(PolyLabel)
                                 .addContainerGap(15, Short.MAX_VALUE))
                 );
 
-                jPanel2.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 190, 50));
+                menu.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 190, 50));
 
                 p3.setBackground(new java.awt.Color(153, 255, 255));
                 p3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -239,16 +328,16 @@ public class CipherForm extends javax.swing.JFrame {
                         }
                 });
 
-                jLabel3.setBackground(new java.awt.Color(204, 204, 204));
-                jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-                jLabel3.setText("Vigener Cipher");
-                jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+                VigeLabel.setBackground(new java.awt.Color(204, 204, 204));
+                VigeLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                VigeLabel.setForeground(new java.awt.Color(0, 0, 0));
+                VigeLabel.setText("Vigener Cipher");
+                VigeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
                         public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                jLabel3MouseClicked(evt);
+                                VigeLabelMouseClicked(evt);
                         }
                         public void mousePressed(java.awt.event.MouseEvent evt) {
-                                jLabel3MousePressed(evt);
+                                VigeLabelMousePressed(evt);
                         }
                 });
 
@@ -258,33 +347,43 @@ public class CipherForm extends javax.swing.JFrame {
                         p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p3Layout.createSequentialGroup()
                                 .addGap(0, 64, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(VigeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                 );
                 p3Layout.setVerticalGroup(
                         p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(p3Layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
-                                .addComponent(jLabel3)
+                                .addComponent(VigeLabel)
                                 .addContainerGap(16, Short.MAX_VALUE))
                 );
 
-                jPanel2.add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 190, 50));
+                menu.add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 190, 50));
 
                 jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 3, 12)); // NOI18N
                 jLabel8.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel8.setText("BSIT-AI41");
-                jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
+                menu.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
 
                 jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 3, 12)); // NOI18N
                 jLabel10.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel10.setText("Created by: Christian Barbosa");
-                jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, -1));
+                menu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, -1));
 
                 jLabel11.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\CIPHER.png")); // NOI18N
-                jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, 40));
+                jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                jLabel11MouseClicked(evt);
+                        }
+                });
+                menu.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, 40));
 
                 jLabel12.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\hecker.png")); // NOI18N
-                jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 140));
+                jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                jLabel12MouseClicked(evt);
+                        }
+                });
+                menu.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 140));
 
                 jPanel5.setBackground(new java.awt.Color(0, 255, 204));
 
@@ -299,7 +398,7 @@ public class CipherForm extends javax.swing.JFrame {
                         .addGap(0, 10, Short.MAX_VALUE)
                 );
 
-                jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 190, -1));
+                menu.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 190, -1));
 
                 jPanel6.setBackground(new java.awt.Color(0, 255, 204));
 
@@ -314,7 +413,7 @@ public class CipherForm extends javax.swing.JFrame {
                         .addGap(0, 210, Short.MAX_VALUE)
                 );
 
-                jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 10, 210));
+                menu.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 10, 210));
 
                 jPanel7.setBackground(new java.awt.Color(0, 255, 204));
 
@@ -329,7 +428,7 @@ public class CipherForm extends javax.swing.JFrame {
                         .addGap(0, 210, Short.MAX_VALUE)
                 );
 
-                jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+                menu.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
                 jPanel8.setBackground(new java.awt.Color(0, 255, 204));
 
@@ -344,10 +443,15 @@ public class CipherForm extends javax.swing.JFrame {
                         .addGap(0, 10, Short.MAX_VALUE)
                 );
 
-                jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, -1));
+                menu.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, -1));
 
-                jLabel13.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\lock (1).png")); // NOI18N
-                jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 120, -1));
+                lock.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\lock (1).png")); // NOI18N
+                lock.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                lockMouseClicked(evt);
+                        }
+                });
+                menu.add(lock, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 120, -1));
 
                 jPanel9.setBackground(new java.awt.Color(0, 255, 204));
 
@@ -362,9 +466,175 @@ public class CipherForm extends javax.swing.JFrame {
                         .addGap(0, 10, Short.MAX_VALUE)
                 );
 
-                jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 190, -1));
+                menu.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 190, -1));
 
-                jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 560));
+                jPanel4.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 560));
+
+                jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+
+                jPanel3.setBackground(new java.awt.Color(0, 255, 204));
+
+                jPanel13.setBackground(new java.awt.Color(255, 255, 204));
+
+                jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel29.setText("Activity 1");
+
+                jLabel28.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+                jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel28.setText("IT 132/132L Information Assurance and Security");
+
+                jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel30.setText("2. Decrypt the ciphered text.");
+
+                jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel31.setText("1. Write a Program in Java to implement an algorithm that will encrypt/cipher a plaintext from the user using the  following: ");
+
+                jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel32.setText("a. Monoalphabetic cipher Substitution Cipher");
+
+                jLabel33.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel33.setText("b. Poly alphabetic Substitution Cipher");
+
+                jLabel34.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel34.setText("c. Vigener Cipher");
+
+                jButton1.setBackground(new java.awt.Color(255, 153, 102));
+                jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(0, 0, 0));
+                jButton1.setText("Get  Started");
+                jButton1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton1ActionPerformed(evt);
+                        }
+                });
+
+                jLabel35.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\ahu.png")); // NOI18N
+
+                javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+                jPanel13.setLayout(jPanel13Layout);
+                jPanel13Layout.setHorizontalGroup(
+                        jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel13Layout.createSequentialGroup()
+                                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(jPanel13Layout.createSequentialGroup()
+                                                                        .addContainerGap()
+                                                                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(jPanel13Layout.createSequentialGroup()
+                                                                        .addGap(30, 30, 30)
+                                                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addGroup(jPanel13Layout.createSequentialGroup()
+                                                                .addGap(47, 47, 47)
+                                                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(65, 65, 65)))
+                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                        .addContainerGap(24, Short.MAX_VALUE)
+                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(35, 35, 35)))
+                );
+                jPanel13Layout.setVerticalGroup(
+                        jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel29)
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(14, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addGap(95, 95, 95)
+                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(234, Short.MAX_VALUE)))
+                );
+
+                javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+                jPanel3.setLayout(jPanel3Layout);
+                jPanel3Layout.setHorizontalGroup(
+                        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                );
+                jPanel3Layout.setVerticalGroup(
+                        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26))
+                );
+
+                jLabel36.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\bot (1).png")); // NOI18N
+
+                javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+                jPanel2.setLayout(jPanel2Layout);
+                jPanel2Layout.setHorizontalGroup(
+                        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(15, 15, 15)
+                                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(70, 70, 70)
+                                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(188, Short.MAX_VALUE))
+                );
+                jPanel2Layout.setVerticalGroup(
+                        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                );
+
+                javax.swing.GroupLayout introLayout = new javax.swing.GroupLayout(intro);
+                intro.setLayout(introLayout);
+                introLayout.setHorizontalGroup(
+                        introLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(introLayout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                );
+                introLayout.setVerticalGroup(
+                        introLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, introLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
+                );
+
+                tabs.addTab("Intro", intro);
 
                 jPanel10.setBackground(new java.awt.Color(255, 153, 102));
                 jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -424,7 +694,7 @@ public class CipherForm extends javax.swing.JFrame {
                 jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel4.setForeground(new java.awt.Color(0, 0, 255));
                 jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\keys.png")); // NOI18N
-                jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 220, 70, 37));
+                jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 70, 37));
 
                 jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel5.setForeground(new java.awt.Color(0, 0, 255));
@@ -434,7 +704,7 @@ public class CipherForm extends javax.swing.JFrame {
                 jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel6.setForeground(new java.awt.Color(0, 0, 255));
                 jLabel6.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\plaintext.png")); // NOI18N
-                jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, 37));
+                jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 140, 37));
 
                 jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
                 jLabel7.setForeground(new java.awt.Color(0, 0, 153));
@@ -462,7 +732,7 @@ public class CipherForm extends javax.swing.JFrame {
                                 .addContainerGap())
                 );
 
-                jTabbedPane1.addTab("Mono", monoPanel);
+                tabs.addTab("Mono", monoPanel);
 
                 jPanel11.setBackground(new java.awt.Color(153, 255, 153));
                 jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -494,6 +764,11 @@ public class CipherForm extends javax.swing.JFrame {
                 encrypt2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                 encrypt2.setText("Encrypt");
                 encrypt2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+                encrypt2.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                encrypt2ActionPerformed(evt);
+                        }
+                });
                 jPanel11.add(encrypt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 125, 39));
 
                 clear2.setBackground(new java.awt.Color(255, 0, 51));
@@ -556,7 +831,7 @@ public class CipherForm extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                 );
 
-                jTabbedPane1.addTab("Poly", polyPanel);
+                tabs.addTab("Poly", polyPanel);
 
                 jPanel12.setBackground(new java.awt.Color(153, 204, 255));
                 jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -651,9 +926,66 @@ public class CipherForm extends javax.swing.JFrame {
                         .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
 
-                jTabbedPane1.addTab("Vigener", vigenerPanel);
+                tabs.addTab("Vigener", vigenerPanel);
 
-                jPanel4.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 770, 610));
+                jPanel14.setBackground(new java.awt.Color(255, 204, 204));
+                jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel1.setText("What is Ciphering?");
+                jPanel14.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 50, -1, -1));
+
+                jPanel15.setBackground(new java.awt.Color(255, 91, 65));
+                jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+                jPanel16.setBackground(new java.awt.Color(153, 255, 153));
+                jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+                javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+                jPanel16.setLayout(jPanel16Layout);
+                jPanel16Layout.setHorizontalGroup(
+                        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 618, Short.MAX_VALUE)
+                );
+                jPanel16Layout.setVerticalGroup(
+                        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 345, Short.MAX_VALUE)
+                );
+
+                javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+                jPanel15.setLayout(jPanel15Layout);
+                jPanel15Layout.setHorizontalGroup(
+                        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(22, Short.MAX_VALUE))
+                );
+                jPanel15Layout.setVerticalGroup(
+                        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(22, Short.MAX_VALUE))
+                );
+
+                jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 670, -1));
+
+                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+                jPanel1.setLayout(jPanel1Layout);
+                jPanel1Layout.setHorizontalGroup(
+                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
+                );
+                jPanel1Layout.setVerticalGroup(
+                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                );
+
+                tabs.addTab("Cipher", jPanel1);
+
+                jPanel4.add(tabs, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 770, 610));
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                 getContentPane().setLayout(layout);
@@ -670,46 +1002,71 @@ public class CipherForm extends javax.swing.JFrame {
         }// </editor-fold>                        
 
         private void decrypt1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-                jTabbedPane1.setSelectedIndex(0);
+               
         }                                        
 
-        private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {                                     
-                jTabbedPane1.setSelectedIndex(0);
-        }                                    
+        private void MonoLabelMouseClicked(java.awt.event.MouseEvent evt) {                                       
+                tabs.setSelectedIndex(1);
+        }                                      
 
         private void p1MouseClicked(java.awt.event.MouseEvent evt) {                                
-                 jTabbedPane1.setSelectedIndex(0);
+                 tabs.setSelectedIndex(1);
         }                               
 
-        private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {                                     
-                jTabbedPane1.setSelectedIndex(1);
-        }                                    
+        private void PolyLabelMouseClicked(java.awt.event.MouseEvent evt) {                                       
+                tabs.setSelectedIndex(2);
+        }                                      
 
-        private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {                                     
-                 jTabbedPane1.setSelectedIndex(2);
-        }                                    
+        private void VigeLabelMouseClicked(java.awt.event.MouseEvent evt) {                                       
+                 tabs.setSelectedIndex(3);
+        }                                      
 
         private void p2MouseClicked(java.awt.event.MouseEvent evt) {                                
-                 jTabbedPane1.setSelectedIndex(1);
+                 tabs.setSelectedIndex(2);
         }                               
 
         private void p3MouseClicked(java.awt.event.MouseEvent evt) {                                
-                jTabbedPane1.setSelectedIndex(2);
+                tabs.setSelectedIndex(3);
         }                               
 
         private void dencrypt2ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-                // TODO add your handling code here:
+               String plaintext2 = pt2.getText();
+	       plaintext2 = plaintext2.toUpperCase();
+	       String keyword2 = key2.getText();
+	       keyword2 = keyword2.toUpperCase();
+	       String enc = autoEncryption(plaintext2, keyword2);
+	       String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+           
+	    
+	    if (keyword2.matches("[-+]?\\d*\\.?\\d+"))
+			keyword2 = "" + alphabet.charAt(Integer.parseInt(keyword2));
+		//String enc = autoEncryption(plaintext2, keyword2);
+
+		//System.out.println("Plaintext : " + plaintext2);
+		//System.out.println("Encrypted : " + enc);
+		//System.out.println("Decrypted : " + autoDecryption(enc, keyword2));
+		output2.setText(autoDecryption(enc, keyword2));
         }                                         
 
         private void decrypt3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-		   String plaintext = pt3.getText();
-		   String keyword = key3.getText();
-		   
-		   String encryptedText3 = encrypt(plaintext, keyword);
-		   output3.setText(encryptedText3);  
-		   
-		   String decryptedText3 = decrypt(encryptedText3, keyword);
-		    output3.setText(plaintext);  
+	     String plaintext3 = pt3.getText();
+	     plaintext3 = plaintext3.toUpperCase();
+	     String keyword3 = key3.getText();
+	     keyword3 = keyword3.toUpperCase();
+	
+	     String str = LowerToUpper(plaintext3);
+	     String keyword = LowerToUpper(keyword3);
+
+	     String key = generateKey(str, keyword);
+	     String cipher_text = cipherText(str, key);
+
+	//System.out.println("Ciphertext : "
+		//+ cipher_text + "\n");
+
+	//System.out.println("Original/Decrypted Text : "
+		//+ originalText(cipher_text, key));
+	
+	     output3.setText( originalText(cipher_text, key));		
         }                                        
 
         private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
@@ -735,11 +1092,11 @@ public class CipherForm extends javax.swing.JFrame {
 		
         }                                        
 
-        private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {                                     
+        private void MonoLabelMousePressed(java.awt.event.MouseEvent evt) {                                       
                 p1.setBackground(clickedcolor);
 		p2.setBackground(defaultcolor);
 		p3.setBackground(defaultcolor);
-        }                                    
+        }                                      
 
         private void p1MousePressed(java.awt.event.MouseEvent evt) {                                
                 p1.setBackground(clickedcolor);
@@ -759,68 +1116,123 @@ public class CipherForm extends javax.swing.JFrame {
 	       	p3.setBackground(clickedcolor2);
         }                               
 
-        private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {                                     
+        private void PolyLabelMousePressed(java.awt.event.MouseEvent evt) {                                       
               	p1.setBackground(defaultcolor);
 		p2.setBackground(clickedcolor1);
 	       	p3.setBackground(defaultcolor);
-        }                                    
+        }                                      
 
-        private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {                                     
+        private void VigeLabelMousePressed(java.awt.event.MouseEvent evt) {                                       
               	p1.setBackground(defaultcolor);
 		p2.setBackground(defaultcolor);
 	       	p3.setBackground(clickedcolor2);
-        }                                    
+        }                                      
 
         private void encrypt3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-                   String plaintext = pt3.getText();
-		   String keyword = key3.getText();
-		   
-		   String encryptedText3 = encrypt(plaintext, keyword);
-		   output3.setText(encryptedText3);
+             String plaintext3 = pt3.getText();
+	     plaintext3 = plaintext3.toUpperCase();
+	     String keyword3 = key3.getText();
+	     keyword3 = keyword3.toUpperCase();
+	     
+	     String str = LowerToUpper(plaintext3);
+	     String keyword = LowerToUpper(keyword3);
+
+	     String key = generateKey(str, keyword);
+	     String cipher_text = cipherText(str, key);
+
+	//System.out.println("Ciphertext : "
+		//+ cipher_text + "\n");
+
+	//System.out.println("Original/Decrypted Text : "
+		//+ originalText(cipher_text, key));
+	
+	     output3.setText( cipher_text);
+	     
 		   
         }                                        
+
+        private void encrypt2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+               String plaintext2 = pt2.getText();
+	       plaintext2 = plaintext2.toUpperCase();
+	       String keyword2 = key2.getText();
+	       keyword2 = keyword2.toUpperCase();
+	       String enc = autoEncryption(plaintext2, keyword2);
+	       String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+           
+	    
+	    if (keyword2.matches("[-+]?\\d*\\.?\\d+"))
+			keyword2 = "" + alphabet.charAt(Integer.parseInt(keyword2));
+		//String enc = autoEncryption(plaintext2, keyword2);
+
+		//System.out.println("Plaintext : " + plaintext2);
+		//System.out.println("Encrypted : " + enc);
+		//System.out.println("Decrypted : " + autoDecryption(enc, keyword2));
+		output2.setText(enc);
+        }                                        
+
+        private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {                                      
+                tabs.setSelectedIndex(0);
+	        p1.setBackground(defaultcolor);
+		p2.setBackground(defaultcolor);
+		p3.setBackground(defaultcolor);
+        }                                     
+
+        private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {                                      
+                tabs.setSelectedIndex(0);
+	        p1.setBackground(defaultcolor);
+		p2.setBackground(defaultcolor);
+		p3.setBackground(defaultcolor);
+        }                                     
+
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+               tabs.setSelectedIndex(1);
+	       p1.setBackground(clickedcolor);
+	       p2.setBackground(defaultcolor);
+	       p3.setBackground(defaultcolor);
+        }                                        
+
+        private void lockMouseClicked(java.awt.event.MouseEvent evt) {                                  
+                tabs.setSelectedIndex(4);
+        }                                 
 
 	/**
 	 * @param args the command line arguments
 	 */
-	 public static String encrypt(String plaintext, String keyword) {
-        StringBuilder encryptedText = new StringBuilder();
-        plaintext = plaintext.toUpperCase();
-        keyword = keyword.toUpperCase();
+	public static String autoEncryption(String plaintext2, String keyword2)
+	{
+		int len = plaintext2.length();
 
-        for (int i = 0, j = 0; i < plaintext.length(); i++) {
-            char c = plaintext.charAt(i);
-            if (c >= 'A' && c <= 'Z') {
-                int shift = keyword.charAt(j) - 'A';
-                char encryptedChar = (char) (((c - 'A' + shift) % 26) + 'A');
-                encryptedText.append(encryptedChar);
-                j = (j + 1) % keyword.length();
-            } else {
-                encryptedText.append(c);
-            }
-        }
+		// generating the keyword2stream
+		String newkeyword2 = keyword2.concat(plaintext2);
+		newkeyword2 = newkeyword2.substring(0, newkeyword2.length() - keyword2.length());
+		String encryptplaintext2 = "";
 
-        return encryptedText.toString();
-    }
-	public static String decrypt(String encryptedText, String keyword) {
-        StringBuilder decryptedText = new StringBuilder();
-        encryptedText = encryptedText;
-        keyword = keyword;
+		// applying encryption algorithm
+		for (int x = 0; x < len; x++) {
+			int first = alphabet.indexOf(plaintext2.charAt(x));
+			int second = alphabet.indexOf(newkeyword2.charAt(x));
+			int total = (first + second) % 26;
+			encryptplaintext2 += alphabet.charAt(total);
+		}
+		return encryptplaintext2;
+	}
+	public static String autoDecryption(String plaintext2, String keyword2)
+	{
+		String currentkeyword2 = keyword2;
+		String decryptplaintext2 = "";
 
-        for (int i = 0, j = 0; i < encryptedText.length(); i++) {
-            char c = encryptedText.charAt(i);
-            if (c >= 'A' && c <= 'Z') {
-                int shift = keyword.charAt(j) - 'A';
-                char decryptedChar = (char) (((c - 'A' - shift + 26) % 26) + 'A');
-                decryptedText.append(decryptedChar);
-                j = (j + 1) % keyword.length();
-            } else {
-                decryptedText.append(c);
-            }
-        }
+		// applying decryption algorithm
+		for (int x = 0; x < plaintext2.length(); x++) {
+			int get1 = alphabet.indexOf(plaintext2.charAt(x));
+			int get2 = alphabet.indexOf(currentkeyword2.charAt(x));
+			int total = (get1 - get2) % 26;
+			total = (total < 0) ? total + 26 : total;
+			decryptplaintext2 += alphabet.charAt(total);
+			currentkeyword2 += alphabet.charAt(total);
+		}
+		return decryptplaintext2;
+	}
 
-        return decryptedText.toString();
-    }
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
 		//<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -854,6 +1266,10 @@ public class CipherForm extends javax.swing.JFrame {
 	}
 
         // Variables declaration - do not modify                     
+        private javax.swing.JPanel Header;
+        private javax.swing.JLabel MonoLabel;
+        private javax.swing.JLabel PolyLabel;
+        private javax.swing.JLabel VigeLabel;
         private javax.swing.JButton clear1;
         private javax.swing.JButton clear2;
         private javax.swing.JButton clear3;
@@ -863,18 +1279,18 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JButton encrypt1;
         private javax.swing.JButton encrypt2;
         private javax.swing.JButton encrypt3;
+        private javax.swing.JPanel intro;
+        private javax.swing.JButton jButton1;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel10;
         private javax.swing.JLabel jLabel11;
         private javax.swing.JLabel jLabel12;
-        private javax.swing.JLabel jLabel13;
         private javax.swing.JLabel jLabel14;
         private javax.swing.JLabel jLabel15;
         private javax.swing.JLabel jLabel16;
         private javax.swing.JLabel jLabel17;
         private javax.swing.JLabel jLabel18;
         private javax.swing.JLabel jLabel19;
-        private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel20;
         private javax.swing.JLabel jLabel21;
         private javax.swing.JLabel jLabel22;
@@ -883,7 +1299,15 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JLabel jLabel25;
         private javax.swing.JLabel jLabel26;
         private javax.swing.JLabel jLabel27;
-        private javax.swing.JLabel jLabel3;
+        private javax.swing.JLabel jLabel28;
+        private javax.swing.JLabel jLabel29;
+        private javax.swing.JLabel jLabel30;
+        private javax.swing.JLabel jLabel31;
+        private javax.swing.JLabel jLabel32;
+        private javax.swing.JLabel jLabel33;
+        private javax.swing.JLabel jLabel34;
+        private javax.swing.JLabel jLabel35;
+        private javax.swing.JLabel jLabel36;
         private javax.swing.JLabel jLabel4;
         private javax.swing.JLabel jLabel5;
         private javax.swing.JLabel jLabel6;
@@ -894,7 +1318,12 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JPanel jPanel10;
         private javax.swing.JPanel jPanel11;
         private javax.swing.JPanel jPanel12;
+        private javax.swing.JPanel jPanel13;
+        private javax.swing.JPanel jPanel14;
+        private javax.swing.JPanel jPanel15;
+        private javax.swing.JPanel jPanel16;
         private javax.swing.JPanel jPanel2;
+        private javax.swing.JPanel jPanel3;
         private javax.swing.JPanel jPanel4;
         private javax.swing.JPanel jPanel5;
         private javax.swing.JPanel jPanel6;
@@ -911,11 +1340,12 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JScrollPane jScrollPane3;
         private javax.swing.JScrollPane jScrollPane4;
         private javax.swing.JScrollPane jScrollPane8;
-        private javax.swing.JTabbedPane jTabbedPane1;
         private javax.swing.JTable jTable1;
         private javax.swing.JTextArea key1;
         private javax.swing.JTextArea key2;
         private javax.swing.JTextArea key3;
+        private javax.swing.JLabel lock;
+        private javax.swing.JPanel menu;
         private javax.swing.JPanel monoPanel;
         private javax.swing.JTextArea output1;
         private javax.swing.JTextArea output2;
@@ -927,6 +1357,7 @@ public class CipherForm extends javax.swing.JFrame {
         private javax.swing.JTextArea pt1;
         private javax.swing.JTextArea pt2;
         private javax.swing.JTextArea pt3;
+        private javax.swing.JTabbedPane tabs;
         private javax.swing.JPanel vigenerPanel;
         // End of variables declaration                   
 }
