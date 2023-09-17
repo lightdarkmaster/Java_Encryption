@@ -140,8 +140,7 @@ static String LowerToUpper(String s)
                 jLabel33 = new javax.swing.JLabel();
                 jLabel34 = new javax.swing.JLabel();
                 jButton1 = new javax.swing.JButton();
-                jLabel35 = new javax.swing.JLabel();
-                jLabel36 = new javax.swing.JLabel();
+                jLabel1 = new javax.swing.JLabel();
                 monoPanel = new javax.swing.JPanel();
                 jPanel10 = new javax.swing.JPanel();
                 jScrollPane1 = new javax.swing.JScrollPane();
@@ -193,11 +192,32 @@ static String LowerToUpper(String s)
                 jLabel23 = new javax.swing.JLabel();
                 jLabel24 = new javax.swing.JLabel();
                 jLabel27 = new javax.swing.JLabel();
-                jPanel1 = new javax.swing.JPanel();
+                colclusion = new javax.swing.JPanel();
                 jPanel14 = new javax.swing.JPanel();
-                jLabel1 = new javax.swing.JLabel();
+                jLabel3 = new javax.swing.JLabel();
+                jPanel1 = new javax.swing.JPanel();
+                jLabel2 = new javax.swing.JLabel();
+                jLabel13 = new javax.swing.JLabel();
+                jLabel35 = new javax.swing.JLabel();
+                jLabel36 = new javax.swing.JLabel();
+                jLabel37 = new javax.swing.JLabel();
+                jLabel38 = new javax.swing.JLabel();
+                jLabel39 = new javax.swing.JLabel();
+                jLabel40 = new javax.swing.JLabel();
+                jLabel41 = new javax.swing.JLabel();
+                jLabel42 = new javax.swing.JLabel();
+                jLabel43 = new javax.swing.JLabel();
+                jLabel44 = new javax.swing.JLabel();
+                jLabel48 = new javax.swing.JLabel();
+                jLabel49 = new javax.swing.JLabel();
+                jLabel50 = new javax.swing.JLabel();
+                jLabel51 = new javax.swing.JLabel();
+                jLabel52 = new javax.swing.JLabel();
+                jLabel53 = new javax.swing.JLabel();
                 jPanel15 = new javax.swing.JPanel();
-                jPanel16 = new javax.swing.JPanel();
+                jLabel45 = new javax.swing.JLabel();
+                jLabel46 = new javax.swing.JLabel();
+                jLabel47 = new javax.swing.JLabel();
 
                 jTable1.setModel(new javax.swing.table.DefaultTableModel(
                         new Object [][] {
@@ -451,7 +471,7 @@ static String LowerToUpper(String s)
                                 lockMouseClicked(evt);
                         }
                 });
-                menu.add(lock, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 120, -1));
+                menu.add(lock, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 130, -1));
 
                 jPanel9.setBackground(new java.awt.Color(0, 255, 204));
 
@@ -474,30 +494,39 @@ static String LowerToUpper(String s)
 
                 jPanel3.setBackground(new java.awt.Color(0, 255, 204));
 
-                jPanel13.setBackground(new java.awt.Color(255, 255, 204));
+                jPanel13.setBackground(new java.awt.Color(255, 255, 255));
+                jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+                jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
                 jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                 jLabel29.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel29.setText("Activity 1");
+                jPanel13.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 55, 93, -1));
 
                 jLabel28.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
                 jLabel28.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel28.setText("IT 132/132L Information Assurance and Security");
+                jPanel13.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 23, 355, 20));
 
                 jLabel30.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel30.setText("2. Decrypt the ciphered text.");
+                jPanel13.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 257, 33));
 
                 jLabel31.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel31.setText("1. Write a Program in Java to implement an algorithm that will encrypt/cipher a plaintext from the user using the  following: ");
+                jPanel13.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 96, 668, 33));
 
                 jLabel32.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel32.setText("a. Monoalphabetic cipher Substitution Cipher");
+                jPanel13.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 257, 33));
 
                 jLabel33.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel33.setText("b. Poly alphabetic Substitution Cipher");
+                jPanel13.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 257, 33));
 
                 jLabel34.setForeground(new java.awt.Color(0, 0, 0));
                 jLabel34.setText("c. Vigener Cipher");
+                jPanel13.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 257, 33));
 
                 jButton1.setBackground(new java.awt.Color(255, 153, 102));
                 jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -508,72 +537,10 @@ static String LowerToUpper(String s)
                                 jButton1ActionPerformed(evt);
                         }
                 });
+                jPanel13.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 138, 48));
 
-                jLabel35.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\ahu.png")); // NOI18N
-
-                javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-                jPanel13.setLayout(jPanel13Layout);
-                jPanel13Layout.setHorizontalGroup(
-                        jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel13Layout.createSequentialGroup()
-                                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addGroup(jPanel13Layout.createSequentialGroup()
-                                                                        .addContainerGap()
-                                                                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addGroup(jPanel13Layout.createSequentialGroup()
-                                                                        .addGap(30, 30, 30)
-                                                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                        .addGroup(jPanel13Layout.createSequentialGroup()
-                                                                .addGap(47, 47, 47)
-                                                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(65, 65, 65)))
-                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                        .addContainerGap(24, Short.MAX_VALUE)
-                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(35, 35, 35)))
-                );
-                jPanel13Layout.setVerticalGroup(
-                        jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel29)
-                                .addGap(57, 57, 57)
-                                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(14, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel13Layout.createSequentialGroup()
-                                        .addGap(95, 95, 95)
-                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(234, Short.MAX_VALUE)))
-                );
+                jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\giphy (2).gif")); // NOI18N
+                jPanel13.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 270));
 
                 javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
                 jPanel3.setLayout(jPanel3Layout);
@@ -581,50 +548,39 @@ static String LowerToUpper(String s)
                         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
+                                .addContainerGap())
                 );
                 jPanel3Layout.setVerticalGroup(
                         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26))
+                                .addContainerGap())
                 );
-
-                jLabel36.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\bot (1).png")); // NOI18N
 
                 javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
                 jPanel2.setLayout(jPanel2Layout);
                 jPanel2Layout.setHorizontalGroup(
                         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(70, 70, 70)
-                                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(188, Short.MAX_VALUE))
+                                .addGap(30, 30, 30)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
                 );
                 jPanel2Layout.setVerticalGroup(
                         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap()
+                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
                 );
 
                 javax.swing.GroupLayout introLayout = new javax.swing.GroupLayout(intro);
                 intro.setLayout(introLayout);
                 introLayout.setHorizontalGroup(
                         introLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(introLayout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 );
                 introLayout.setVerticalGroup(
                         introLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -928,62 +884,143 @@ static String LowerToUpper(String s)
 
                 tabs.addTab("Vigener", vigenerPanel);
 
-                jPanel14.setBackground(new java.awt.Color(255, 204, 204));
+                jPanel14.setBackground(new java.awt.Color(255, 255, 255));
                 jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-                jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-                jLabel1.setText("What is Ciphering?");
-                jPanel14.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 50, -1, -1));
+                jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\coding.gif")); // NOI18N
+                jPanel14.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
-                jPanel15.setBackground(new java.awt.Color(255, 91, 65));
-                jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+                jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+                jPanel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+                jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-                jPanel16.setBackground(new java.awt.Color(153, 255, 153));
-                jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel2.setText("FEATURES");
+                jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
-                javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-                jPanel16.setLayout(jPanel16Layout);
-                jPanel16Layout.setHorizontalGroup(
-                        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 618, Short.MAX_VALUE)
-                );
-                jPanel16Layout.setVerticalGroup(
-                        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 345, Short.MAX_VALUE)
-                );
+                jLabel13.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel13.setText("1. Choose the cipher method your're going to use.");
+                jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 66, 273, -1));
 
-                javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-                jPanel15.setLayout(jPanel15Layout);
-                jPanel15Layout.setHorizontalGroup(
-                        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(22, Short.MAX_VALUE))
-                );
-                jPanel15Layout.setVerticalGroup(
-                        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(22, Short.MAX_VALUE))
-                );
+                jLabel35.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel35.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel35.setText("2. Enter you plaintext.");
+                jPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 88, 273, -1));
 
-                jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 670, -1));
+                jLabel36.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel36.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel36.setText("3. Enter key(s).");
+                jPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 110, 273, -1));
 
-                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-                jPanel1.setLayout(jPanel1Layout);
-                jPanel1Layout.setHorizontalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                jLabel37.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel37.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel37.setText("4. Press the encrypt button to encrypt the plaintext.");
+                jPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 132, 273, -1));
+
+                jLabel38.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel38.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel38.setText("5. Press decrypt button to decrypt the encrypted text.");
+                jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 154, 273, -1));
+
+                jLabel39.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel39.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel39.setText("4. Easy to use.");
+                jPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 273, -1));
+
+                jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                jLabel40.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel40.setText("HOW TO USE");
+                jPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 23, -1, -1));
+
+                jLabel41.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel41.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel41.setText("6. Press clear to clear all the text fields.");
+                jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 176, 273, -1));
+
+                jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                jLabel42.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel42.setText("Date Finished: ");
+                jPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, -1, -1));
+
+                jLabel43.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel43.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel43.setText("2. Can Decrypt encrypted text.");
+                jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 273, -1));
+
+                jLabel44.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel44.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel44.setText("3. User friendly User Interface.");
+                jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 273, -1));
+
+                jLabel48.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel48.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel48.setText("September  17, 2023");
+                jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, 110, -1));
+
+                jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                jLabel49.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel49.setText("Developer: ");
+                jPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 90, -1));
+
+                jLabel50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                jLabel50.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel50.setText("Date Started: ");
+                jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, -1, -1));
+
+                jLabel51.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel51.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel51.setText("1. Can Encrypt plaintext.");
+                jPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 273, -1));
+
+                jLabel52.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel52.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel52.setText("Christian Barbosa");
+                jPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 110, -1));
+
+                jLabel53.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+                jLabel53.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel53.setText("September  12, 2023");
+                jPanel1.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 110, -1));
+
+                jPanel14.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 300, 590));
+
+                jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+                jPanel15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+                jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+                jLabel45.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+                jLabel45.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel45.setText("ABOUT");
+                jPanel15.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 140, -1));
+
+                jLabel46.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel46.setText("Assurance.");
+                jPanel15.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+                jLabel47.setForeground(new java.awt.Color(0, 0, 0));
+                jLabel47.setText("This Java application is developed to comply for the activity no. 1 in  Information");
+                jPanel15.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+
+                jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 480, 140));
+
+                javax.swing.GroupLayout colclusionLayout = new javax.swing.GroupLayout(colclusion);
+                colclusion.setLayout(colclusionLayout);
+                colclusionLayout.setHorizontalGroup(
+                        colclusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
                 );
-                jPanel1Layout.setVerticalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                colclusionLayout.setVerticalGroup(
+                        colclusionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(colclusionLayout.createSequentialGroup()
+                                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                 );
 
-                tabs.addTab("Cipher", jPanel1);
+                tabs.addTab("Cipher", colclusion);
 
                 jPanel4.add(tabs, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 770, 610));
 
@@ -1002,7 +1039,77 @@ static String LowerToUpper(String s)
         }// </editor-fold>                        
 
         private void decrypt1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-               
+		String plaintext1 = pt1.getText();
+		plaintext1 = plaintext1.toUpperCase();
+		String key = key1.getText(); // Change the key to a string
+		key = key.toUpperCase();
+		String ciphertext = "";
+		
+		 if (isInteger(key)) {
+            int intKey = Integer.parseInt(key);
+
+            for (int i = 0; i < plaintext1.length(); i++) {
+                int index = plaintext1.charAt(i) - 'A';
+                int ci = index + intKey;
+
+                if (ci >= 26) {
+                    ci = ci - 26;
+                }
+
+                char ch = (char) (ci + 'A');
+
+                ciphertext = ciphertext + ch;
+            }
+        } else {
+            // Handle the case where the key is a string (e.g., "KEY")
+            for (int i = 0; i < plaintext1.length(); i++) {
+                char plaintextChar = plaintext1.charAt(i);
+                char keyChar = key.charAt(i % key.length()); // Repeating the key if it's shorter than plaintext
+                int index = plaintextChar - 'A';
+                int keyIndex = keyChar - 'A';
+                int ci = (index + keyIndex) % 26;
+
+                char ch = (char) (ci + 'A');
+
+                ciphertext = ciphertext + ch;
+            }
+        }
+
+        //System.out.print("Cipher: ");
+        //System.out.println(ciphertext);
+	output1.setText(plaintext1);
+
+        //plaintext1 = "";
+
+        for (int i = 0; i < ciphertext.length(); i++) {
+            int index = ciphertext.charAt(i) - 'A';
+            int ci = index - key.length(); // Use key.length() as the decryption key
+
+            if (ci < 0) {
+                ci = ci + 26;
+            }
+
+            //char ch = (char) (ci + 'A');
+
+            //plaintext1 = plaintext1 + ch;
+        }
+
+        //System.out.print("Decipher: ");
+        //System.out.println(plaintext1);
+
+		for (int i = 0; i < ciphertext.length(); i++) {
+			int index = ciphertext.charAt(i) - 65;
+			int ci = index - key.length();
+
+			if (ci < 0) {
+				ci = ci + 26;
+			}
+
+			Character ch = (char) (ci + 65);
+
+			plaintext1 = plaintext1 + ch.toString();
+
+		}
         }                                        
 
         private void MonoLabelMouseClicked(java.awt.event.MouseEvent evt) {                                       
@@ -1088,7 +1195,77 @@ static String LowerToUpper(String s)
         }                                      
 
         private void encrypt1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+		String plaintext1 = pt1.getText();
+		plaintext1 = plaintext1.toUpperCase();
+		String key = key1.getText(); // Change the key to a string
+		key = key.toUpperCase();
+		String ciphertext = "";
+		
+		 if (isInteger(key)) {
+            int intKey = Integer.parseInt(key);
 
+            for (int i = 0; i < plaintext1.length(); i++) {
+                int index = plaintext1.charAt(i) - 'A';
+                int ci = index + intKey;
+
+                if (ci >= 26) {
+                    ci = ci - 26;
+                }
+
+                char ch = (char) (ci + 'A');
+
+                ciphertext = ciphertext + ch;
+            }
+        } else {
+            // Handle the case where the key is a string (e.g., "KEY")
+            for (int i = 0; i < plaintext1.length(); i++) {
+                char plaintextChar = plaintext1.charAt(i);
+                char keyChar = key.charAt(i % key.length()); // Repeating the key if it's shorter than plaintext
+                int index = plaintextChar - 'A';
+                int keyIndex = keyChar - 'A';
+                int ci = (index + keyIndex) % 26;
+
+                char ch = (char) (ci + 'A');
+
+                ciphertext = ciphertext + ch;
+            }
+        }
+
+        //System.out.print("Cipher: ");
+        //System.out.println(ciphertext);
+	output1.setText(ciphertext);
+
+        //plaintext1 = "";
+
+        for (int i = 0; i < ciphertext.length(); i++) {
+            int index = ciphertext.charAt(i) - 'A';
+            int ci = index - key.length(); // Use key.length() as the decryption key
+
+            if (ci < 0) {
+                ci = ci + 26;
+            }
+
+            //char ch = (char) (ci + 'A');
+
+            //plaintext1 = plaintext1 + ch;
+        }
+
+        //System.out.print("Decipher: ");
+        //System.out.println(plaintext1);
+
+		for (int i = 0; i < ciphertext.length(); i++) {
+			int index = ciphertext.charAt(i) - 65;
+			int ci = index - key.length();
+
+			if (ci < 0) {
+				ci = ci + 26;
+			}
+
+			Character ch = (char) (ci + 65);
+
+			plaintext1 = plaintext1 + ch.toString();
+
+		}
 		
         }                                        
 
@@ -1184,16 +1361,19 @@ static String LowerToUpper(String s)
 		p3.setBackground(defaultcolor);
         }                                     
 
-        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-               tabs.setSelectedIndex(1);
-	       p1.setBackground(clickedcolor);
-	       p2.setBackground(defaultcolor);
-	       p3.setBackground(defaultcolor);
-        }                                        
-
         private void lockMouseClicked(java.awt.event.MouseEvent evt) {                                  
                 tabs.setSelectedIndex(4);
+		p1.setBackground(defaultcolor);
+		p2.setBackground(defaultcolor);
+		p3.setBackground(defaultcolor);
         }                                 
+
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+                tabs.setSelectedIndex(1);
+                p1.setBackground(clickedcolor);
+                p2.setBackground(defaultcolor);
+                p3.setBackground(defaultcolor);
+        }                                        
 
 	/**
 	 * @param args the command line arguments
@@ -1232,6 +1412,22 @@ static String LowerToUpper(String s)
 		}
 		return decryptplaintext2;
 	}
+	
+	  public static void alphabetValue() {
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            int value = ch - 'A';
+            System.out.println(ch + " -> " + value);
+        }
+    }
+
+    public static boolean isInteger(String s) {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
 	public static void main(String args[]) {
 		/* Set the Nimbus look and feel */
@@ -1273,6 +1469,7 @@ static String LowerToUpper(String s)
         private javax.swing.JButton clear1;
         private javax.swing.JButton clear2;
         private javax.swing.JButton clear3;
+        private javax.swing.JPanel colclusion;
         private javax.swing.JButton decrypt1;
         private javax.swing.JButton decrypt3;
         private javax.swing.JButton dencrypt2;
@@ -1285,12 +1482,14 @@ static String LowerToUpper(String s)
         private javax.swing.JLabel jLabel10;
         private javax.swing.JLabel jLabel11;
         private javax.swing.JLabel jLabel12;
+        private javax.swing.JLabel jLabel13;
         private javax.swing.JLabel jLabel14;
         private javax.swing.JLabel jLabel15;
         private javax.swing.JLabel jLabel16;
         private javax.swing.JLabel jLabel17;
         private javax.swing.JLabel jLabel18;
         private javax.swing.JLabel jLabel19;
+        private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel20;
         private javax.swing.JLabel jLabel21;
         private javax.swing.JLabel jLabel22;
@@ -1301,6 +1500,7 @@ static String LowerToUpper(String s)
         private javax.swing.JLabel jLabel27;
         private javax.swing.JLabel jLabel28;
         private javax.swing.JLabel jLabel29;
+        private javax.swing.JLabel jLabel3;
         private javax.swing.JLabel jLabel30;
         private javax.swing.JLabel jLabel31;
         private javax.swing.JLabel jLabel32;
@@ -1308,8 +1508,25 @@ static String LowerToUpper(String s)
         private javax.swing.JLabel jLabel34;
         private javax.swing.JLabel jLabel35;
         private javax.swing.JLabel jLabel36;
+        private javax.swing.JLabel jLabel37;
+        private javax.swing.JLabel jLabel38;
+        private javax.swing.JLabel jLabel39;
         private javax.swing.JLabel jLabel4;
+        private javax.swing.JLabel jLabel40;
+        private javax.swing.JLabel jLabel41;
+        private javax.swing.JLabel jLabel42;
+        private javax.swing.JLabel jLabel43;
+        private javax.swing.JLabel jLabel44;
+        private javax.swing.JLabel jLabel45;
+        private javax.swing.JLabel jLabel46;
+        private javax.swing.JLabel jLabel47;
+        private javax.swing.JLabel jLabel48;
+        private javax.swing.JLabel jLabel49;
         private javax.swing.JLabel jLabel5;
+        private javax.swing.JLabel jLabel50;
+        private javax.swing.JLabel jLabel51;
+        private javax.swing.JLabel jLabel52;
+        private javax.swing.JLabel jLabel53;
         private javax.swing.JLabel jLabel6;
         private javax.swing.JLabel jLabel7;
         private javax.swing.JLabel jLabel8;
@@ -1321,7 +1538,6 @@ static String LowerToUpper(String s)
         private javax.swing.JPanel jPanel13;
         private javax.swing.JPanel jPanel14;
         private javax.swing.JPanel jPanel15;
-        private javax.swing.JPanel jPanel16;
         private javax.swing.JPanel jPanel2;
         private javax.swing.JPanel jPanel3;
         private javax.swing.JPanel jPanel4;
