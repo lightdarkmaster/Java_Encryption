@@ -61,3 +61,5 @@ public class AutoKey {
 		return decryptMsg;
 	}
 }
+
+//this is the logic I use in the implementation of my cipher text..

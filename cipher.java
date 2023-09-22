@@ -30,4 +30,20 @@ class cipher{
             System.out.println(i);
         }
     }
+
+    String name;
+    String output;
+    String plaintext3;
+
+    
+    public void conditionStatement(){
+        if(name.isEmpty()) {
+            System.out.println("Error in this code we need back up");
+        }else{
+            output.getText(plaintext3.toUpperCase());
+        }
+    }
 }
+
+
+
