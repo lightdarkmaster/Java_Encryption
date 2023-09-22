@@ -19,6 +19,10 @@ class cipher{
 
     }
 
+    public void validation(){
+        System.out.println("Add code here: ");
+    }
+
     public static void ciphering(){
         int i;
 

@@ -540,22 +540,22 @@ static String LowerToUpper(String s)
                 jPanel13.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 138, 48));
 
                 jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Kdrama\\giphy (2).gif")); // NOI18N
-                jPanel13.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 270));
+                jPanel13.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, 270));
 
                 javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
                 jPanel3.setLayout(jPanel3Layout);
                 jPanel3Layout.setHorizontalGroup(
                         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
+                                .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
                                 .addContainerGap())
                 );
                 jPanel3Layout.setVerticalGroup(
                         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(21, Short.MAX_VALUE)
+                                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                 );
 
@@ -563,8 +563,8 @@ static String LowerToUpper(String s)
                 jPanel2.setLayout(jPanel2Layout);
                 jPanel2Layout.setHorizontalGroup(
                         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
                                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addContainerGap())
                 );
@@ -1044,6 +1044,20 @@ static String LowerToUpper(String s)
 		String key = key1.getText(); // Change the key to a string
 		key = key.toUpperCase();
 		String ciphertext = "";
+		String expectedValue = key;
+		
+		if (key.isEmpty()) {
+			output1.setText("WARNING: KEY CANNOT BE EMPTY");
+		} else if (!key.equals(expectedValue)) {
+			output1.setText("ERROR: INPUT MUST BE EQUAL TO KEY");
+		} else {
+			output1.setText(plaintext1);
+		}
+		
+		
+		
+		
+		
 		
 		 if (isInteger(key)) {
             int intKey = Integer.parseInt(key);
@@ -1077,7 +1091,7 @@ static String LowerToUpper(String s)
 
         //System.out.print("Cipher: ");
         //System.out.println(ciphertext);
-	output1.setText(plaintext1);
+	//output1.setText(plaintext1);
 
         //plaintext1 = "";
 
@@ -1143,6 +1157,16 @@ static String LowerToUpper(String s)
 	       keyword2 = keyword2.toUpperCase();
 	       String enc = autoEncryption(plaintext2, keyword2);
 	       String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	       String expectedValue1 = keyword2;
+	       
+	       
+	       	if (keyword2.isEmpty()) {
+			output2.setText("WARNING: KEY CANNOT BE EMPTY");
+		} else if (!keyword2.equals(expectedValue1)) {
+			output2.setText("ERROR: INPUT MUST BE EQUAL TO KEY");
+		} else {
+			output2.setText(plaintext2);
+		}
            
 	    
 	    if (keyword2.matches("[-+]?\\d*\\.?\\d+"))
@@ -1152,7 +1176,9 @@ static String LowerToUpper(String s)
 		//System.out.println("Plaintext : " + plaintext2);
 		//System.out.println("Encrypted : " + enc);
 		//System.out.println("Decrypted : " + autoDecryption(enc, keyword2));
-		output2.setText(autoDecryption(enc, keyword2));
+		//output2.setText(autoDecryption(enc, keyword2));
+		//Display the plaintext
+		//output2.setText(plaintext2);
         }                                         
 
         private void decrypt3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -1166,6 +1192,19 @@ static String LowerToUpper(String s)
 
 	     String key = generateKey(str, keyword);
 	     String cipher_text = cipherText(str, key);
+	     
+	      String expectedValue2 = keyword3;
+	       
+	       
+	       	if (keyword3.isEmpty()) {
+			output3.setText("WARNING: KEY CANNOT BE EMPTY");
+		} else if (!keyword3.equals(expectedValue2)) {
+			output3.setText("ERROR: INPUT MUST BE EQUAL TO KEY");
+		} else {
+			 output3.setText( originalText(cipher_text, key));
+		}
+	     
+	     //Forcing the string input into capital letters..
 
 	//System.out.println("Ciphertext : "
 		//+ cipher_text + "\n");
@@ -1173,25 +1212,28 @@ static String LowerToUpper(String s)
 	//System.out.println("Original/Decrypted Text : "
 		//+ originalText(cipher_text, key));
 	
-	     output3.setText( originalText(cipher_text, key));		
+	     //output3.setText( originalText(cipher_text, key));		
         }                                        
 
         private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
                 pt1.setText("");
 		key1.setText("");
 		output1.setText("");
+		//clearing the textarea -- reset the input..
         }                                      
 
         private void clear2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
                 pt2.setText("");
 		key2.setText("");
 		output2.setText("");
+		//clearing the textarea -- reset the input..
         }                                      
 
         private void clear3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
                 pt3.setText("");
 		key3.setText("");
 		output3.setText("");
+		//clearing the textarea -- reset the input..
         }                                      
 
         private void encrypt1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -1273,36 +1315,42 @@ static String LowerToUpper(String s)
                 p1.setBackground(clickedcolor);
 		p2.setBackground(defaultcolor);
 		p3.setBackground(defaultcolor);
+		//changing the panel when the label is clicked.
         }                                      
 
         private void p1MousePressed(java.awt.event.MouseEvent evt) {                                
                 p1.setBackground(clickedcolor);
 		p2.setBackground(defaultcolor);
 		p3.setBackground(defaultcolor);
+		//changing the panel when the panel is clicked.
         }                               
 
         private void p2MousePressed(java.awt.event.MouseEvent evt) {                                
               	p1.setBackground(defaultcolor);
 		p2.setBackground(clickedcolor1);
 	       	p3.setBackground(defaultcolor);
+		//changing the panel when the panel is clicked.
         }                               
 
         private void p3MousePressed(java.awt.event.MouseEvent evt) {                                
 		p1.setBackground(defaultcolor);
 		p2.setBackground(defaultcolor);
 	       	p3.setBackground(clickedcolor2);
+		//changing the panel when the panel is clicked.
         }                               
 
         private void PolyLabelMousePressed(java.awt.event.MouseEvent evt) {                                       
               	p1.setBackground(defaultcolor);
 		p2.setBackground(clickedcolor1);
 	       	p3.setBackground(defaultcolor);
+		//changing the panel when the label is clicked.
         }                                      
 
         private void VigeLabelMousePressed(java.awt.event.MouseEvent evt) {                                       
               	p1.setBackground(defaultcolor);
 		p2.setBackground(defaultcolor);
 	       	p3.setBackground(clickedcolor2);
+		//changing the panel when the label is clicked.
         }                                      
 
         private void encrypt3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -1316,12 +1364,15 @@ static String LowerToUpper(String s)
 
 	     String key = generateKey(str, keyword);
 	     String cipher_text = cipherText(str, key);
+	     
+	     //functiomn of the button when clicked...
 
 	//System.out.println("Ciphertext : "
 		//+ cipher_text + "\n");
 
 	//System.out.println("Original/Decrypted Text : "
 		//+ originalText(cipher_text, key));
+	//trying to print first the result in the console before I print it in the output panel.
 	
 	     output3.setText( cipher_text);
 	     
@@ -1334,9 +1385,12 @@ static String LowerToUpper(String s)
 	       String keyword2 = key2.getText();
 	       keyword2 = keyword2.toUpperCase();
 	       String enc = autoEncryption(plaintext2, keyword2);
+	       
+	       //gin declare ko an alphabet letters and save it as a variable "alphabet";
 	       String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	       
+	       //poly function of the button when clicked..
            
-	    
 	    if (keyword2.matches("[-+]?\\d*\\.?\\d+"))
 			keyword2 = "" + alphabet.charAt(Integer.parseInt(keyword2));
 		//String enc = autoEncryption(plaintext2, keyword2);
@@ -1395,6 +1449,7 @@ static String LowerToUpper(String s)
 			encryptplaintext2 += alphabet.charAt(total);
 		}
 		return encryptplaintext2;
+		//encryptin the plaintext in the poly -- section
 	}
 	public static String autoDecryption(String plaintext2, String keyword2)
 	{
@@ -1411,12 +1466,14 @@ static String LowerToUpper(String s)
 			currentkeyword2 += alphabet.charAt(total);
 		}
 		return decryptplaintext2;
+		//decrypting the plaintext in the poly-alphabetic cipher..
 	}
 	
 	  public static void alphabetValue() {
         for (char ch = 'A'; ch <= 'Z'; ch++) {
             int value = ch - 'A';
             System.out.println(ch + " -> " + value);
+	    //checking if the input is a characters form A-Z;
         }
     }
 
@@ -1427,6 +1484,7 @@ static String LowerToUpper(String s)
         } catch (NumberFormatException e) {
             return false;
         }
+	//checking if the input is an integer..
     }
 
 	public static void main(String args[]) {
